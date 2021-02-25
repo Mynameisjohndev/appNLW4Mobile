@@ -1,26 +1,22 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../contexts/auth';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    View,
-    Text,
-    StatusBar,
-    Image
-} from 'react-native';
-import styles from './styles';
+import { View } from 'react-native';
 
-export default function Home() {
-    const { user } = useContext(AuthContext);
+import styles from './styles';
+import Profile from '../../components/ProFile/Profile';
+import ExperienceBar from '../../components/ExperienceBar/ExperienceBar';
+
+const Home = ()=> {
+    const { } = useContext(AuthContext);
     return (
-        
-            <View style={styles.container}>
-                <Image style={styles.img} source={{ uri: `${user.foto}` }} />
-                <View style={styles.containerText}>
-                    <Text style={styles.textNome}>{user.nome}</Text>
-                    <Text style={styles.textLevel}>Level {user.level}</Text>
-                </View>
-            </View>
+
+        <View style={{ display: 'flex', alignItems: 'center' }}>
+
+            <Profile />
+            <ExperienceBar/>
+
+        </View>
     );
 }
+
+export default Home;
