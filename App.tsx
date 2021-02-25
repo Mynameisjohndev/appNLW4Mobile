@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 import { AuthProvider } from './src/contexts/auth';
 
-import Home from './src/pages/home/index';
+import Home from  './src/pages/Home';
 
 function App() {
   return (
     <View>
       <AuthProvider>
-        <Home />
+        <Home/>
       </AuthProvider>
     </View>
   );
