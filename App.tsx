@@ -7,16 +7,16 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import { AuthProvider } from './src/contexts/auth';
 
+import Home from './src/pages/home/index';
 
 function App() {
-  const [teste, seTeste] = useState(0);
   return (
     <View>
-      <StatusBar barStyle="dark-content" />
-
-      <Text>{teste}</Text>
-      <Text>Oi</Text>
+      <AuthProvider>
+        <Home />
+      </AuthProvider>
     </View>
   );
 }
