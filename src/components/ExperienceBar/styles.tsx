@@ -4,22 +4,15 @@ const styles = StyleSheet.create({
 
     barContainer:{
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%', 
+    },subContainer:{
+        width: '70%',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 16,
-        padding:30
     },
-    barra:{
-        width: '80%',
-        height: 4,
-        backgroundColor: '#cacaca'
-    },barra2:{
-        width: '80%',
-        height: 4,
-        backgroundColor: '#1cb924'
-    }
 
 });
 
