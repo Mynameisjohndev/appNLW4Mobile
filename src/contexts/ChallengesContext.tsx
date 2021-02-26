@@ -1,33 +1,57 @@
-import React, {useState, createContext, useContext, ReactNode } from 'react'
+import React, { useState, createContext, useContext, ReactNode } from 'react'
+
+const challengs = require('../challenges.json');
 
 //tipagem do children
-interface contextProps{
+interface contextProps {
     children: ReactNode;
 }
 
-interface data{
-    nome : string;
+interface data {
+    nome: string;
     level: number;
     foto: string;
 }
 
-interface dataContext{
-    user: data;
+
+interface challenge{
+    description: String;
+    amount: number;
+    type: String;
 }
 
-export const AuthContext = createContext({} as dataContext );
+interface dataContext {
+    user: data;
+    newChallenge: () => void;
+    activeChallenge: challenge;
+}
 
-export function AuthProvider ({ children } : contextProps){
+export const ChallengesContext = createContext({} as dataContext);
+
+export function AuthProvider({ children }: contextProps) {
     const [user, setUser] = useState({
         nome: "João",
         level: 1,
         foto: "https://github.com/Jhon9191.png"
     });
 
-    return(
-        <AuthContext.Provider value={{ user }}>
+    const [activeChallenge, setActiveChallenge] = useState({
+        description: "Beautifull",
+        amount: 0,
+        type: 'arrow'
+    });
+
+    const newChallenge = () => {
+        const randomChallenge = Math.floor(Math.random() * challengs.length);
+        const challenge = challengs[randomChallenge];
+        console.log(challenge);
+        setActiveChallenge(challenge);
+    }
+
+    return (
+        <ChallengesContext.Provider value={{ user, newChallenge, activeChallenge }}>
             {children}
-        </AuthContext.Provider>
+        </ChallengesContext.Provider>
     );
 }
 

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { View, Text, Image } from 'react-native';
 import { ThemeContext } from 'styled-components';
-import { AuthContext } from '../../contexts/ChallengesContext';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 import styles from './styles';
 
 const ExperienceBar = () => {
-    const {  } = useContext(AuthContext);
+    const {  } = useContext(ChallengesContext);
 
     return (
         <View style={styles.barContainer}>

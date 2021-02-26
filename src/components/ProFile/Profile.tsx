@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import {View, Text, Image} from  'react-native';
-import { AuthContext } from '../../contexts/ChallengesContext';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 import styles from './styles';
 
 const Profile = () =>{
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(ChallengesContext);
     return(
         <View style={styles.container}>
                 <Image style={styles.img} source={{ uri: `${user.foto}` }} />

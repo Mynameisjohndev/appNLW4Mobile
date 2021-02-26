@@ -1,4 +1,5 @@
-import React, {useState, createContext, useEffect, ReactNode } from 'react'
+import React, {useState, createContext, useEffect, ReactNode, useContext } from 'react'
+import { ChallengesContext } from './ChallengesContext';
 
 //tipagem do children
 interface contextProps{
@@ -10,7 +11,6 @@ interface dataContext{
     time: number;
     minutes: number;
     seconds: number;
-    countdownTimeOut: number;
     isActive: boolean;
     hasFinished: boolean;
     startCountdown: ()=> void;
@@ -23,6 +23,8 @@ export const CountdowContext = createContext({} as dataContext );
 
 export function CountdowProvider ({ children } : contextProps){
    
+    const { newChallenge } = useContext(ChallengesContext);
+
     const [time, setTime] = useState(0.1 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
@@ -49,6 +51,7 @@ export function CountdowProvider ({ children } : contextProps){
         } else if (isActive == true && time == 0) {
             setHasFinished(true);
             setIsActive(false);
+            newChallenge();
         }
     }, [isActive, time])
 
@@ -57,7 +60,6 @@ export function CountdowProvider ({ children } : contextProps){
             time,
             minutes,
             seconds,
-            countdownTimeOut,
             isActive,
             hasFinished,
             startCountdown,

@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { AuthContext } from '../../contexts/ChallengesContext';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
@@ -7,8 +6,7 @@ import { CountdowContext } from '../../contexts/CountdowContext';
 
 
 const Countdown = () => {
-    const { time ,minutes, seconds, isActive, stopCountodown, hasFinished, startCountdown } = useContext(CountdowContext);
-    
+    const { minutes, seconds, isActive, stopCountodown, hasFinished, startCountdown } = useContext(CountdowContext);
 
     const [minutesLeft, minutesRight] = String(minutes).padStart(2, '0').split('');
     const [secondsLeft, secondsRight] = String(seconds).padStart(2, '0').split('');
