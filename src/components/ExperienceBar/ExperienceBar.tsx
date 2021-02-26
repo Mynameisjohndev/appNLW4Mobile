@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Text, Image } from 'react-native';
 import { ThemeContext } from 'styled-components';
-import { AuthContext } from '../../contexts/auth';
+import { AuthContext } from '../../contexts/ChallengesContext';
 
 import styles from './styles';
 

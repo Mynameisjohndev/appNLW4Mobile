@@ -7,17 +7,15 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import { AuthProvider } from './src/contexts/auth';
+import { AuthProvider } from './src/contexts/ChallengesContext';
 
 import Home from  './src/pages/Home';
 
 function App() {
   return (
-    <View>
       <AuthProvider>
         <Home/>
       </AuthProvider>
-    </View>
   );
 }
 
