@@ -24,14 +24,23 @@ const styles = StyleSheet.create({
         color: '#888888'
     }
 
-    ,comecarCiclo:{
+    ,finalizarCiclo:{
         width: '95%',
-        height: 50,
+        height: 60,
+        backgroundColor: '#d14848',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 6
+    },comecarCiclo:{
+        width: '95%',
+        height: 60,
         backgroundColor: '#5148d1',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 4
-
+        borderRadius: 6
+    },buttonText:{
+        color: '#fff',
+        fontSize: 16
     }
 
 });
