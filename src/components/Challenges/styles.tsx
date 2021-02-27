@@ -3,13 +3,34 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
 
     containerChallenge:{
-        marginTop: 20,
+        width: '100%',
+        marginTop: 60,
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%'
-    },title:{
+    },card:{
+        backgroundColor: '#f2f3fa',
+        elevation: 5,
+        borderRadius: 6,
+        width: '95%',
+        padding: 3,
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+    ,title:{
         textAlign: 'center',
-        fontSize: 18
+        fontSize: 20,
+        fontWeight: 'bold'
+    }
+    ,novoBotao:{
+        width: '50%',
+        height: 30,
+        backgroundColor: '#5148d1',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 15
+    },buttonText:{
+        color: '#fff',
+        fontSize: 16
     }
 
 });
