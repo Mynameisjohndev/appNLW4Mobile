@@ -1,30 +1,7 @@
 import React, { useState, createContext, useContext, ReactNode } from 'react'
-
+import { dataContext, contextProps} from './Types'
 const challengs = require('../challenges.json');
 
-//tipagem do children
-interface contextProps {
-    children: ReactNode;
-}
-
-interface data {
-    nome: string;
-    level: number;
-    foto: string;
-}
-
-
-interface challenge{
-    description: String;
-    amount: number;
-    type: String;
-}
-
-interface dataContext {
-    user: data;
-    newChallenge: () => void;
-    activeChallenge: challenge;
-}
 
 export const ChallengesContext = createContext({} as dataContext);
 

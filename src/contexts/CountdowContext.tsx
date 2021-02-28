@@ -1,25 +1,11 @@
 import React, {useState, createContext, useEffect, ReactNode, useContext } from 'react'
 import { ChallengesContext } from './ChallengesContext';
-
+import {  contextProps , dataContextCountdown} from './Types';
 //tipagem do children
-interface contextProps{
-    children: ReactNode;
-}
-
-
-interface dataContext{
-    time: number;
-    minutes: number;
-    seconds: number;
-    isActive: boolean;
-    hasFinished: boolean;
-    startCountdown: ()=> void;
-    stopCountodown: ()=> void;
-}
 
 let countdownTimeOut: NodeJS.Timeout;
 
-export const CountdowContext = createContext({} as dataContext );
+export const CountdowContext = createContext({} as dataContextCountdown );
 
 export function CountdowProvider ({ children } : contextProps){
    

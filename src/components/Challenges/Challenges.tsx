@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
+import ChallengeModal  from '../ChallengeModal/ChallengeModal';
 
 import styles from './styles';
 
@@ -16,8 +17,7 @@ const Challengs = () => {
                     <Text>Comece um novo ciclo</Text>
                 </View>
             ) : (
-
-                    <View style={styles.card}>
+                <View style={styles.card}>
                         <View style={{ height: 35,display: 'flex', flexDirection: 'row' }}></View>
                         <Text>Valendo: </Text>
                         <Text style={styles.title}>{activeChallenge.amount} xp</Text>
@@ -29,6 +29,7 @@ const Challengs = () => {
                     </View>
 
                 )}
+            <ChallengeModal/>
         </View>
     );
 }

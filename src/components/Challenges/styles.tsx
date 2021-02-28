@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     }
     ,novoBotao:{
+        marginBottom: 10,
         width: '50%',
         height: 30,
         backgroundColor: '#5148d1',
