@@ -25,8 +25,20 @@ export function AuthProvider({ children }: contextProps) {
         setActiveChallenge(challenge);
     }
 
+    const[activeModal, setActiveModal] = useState(false)
+
+    const showModal = () =>{
+        setActiveModal(!activeModal);
+    }
+
     return (
-        <ChallengesContext.Provider value={{ user, newChallenge, activeChallenge }}>
+        <ChallengesContext.Provider value={{
+             user, 
+             newChallenge, 
+             showModal,
+             activeChallenge,
+             activeModal
+             }}>
             {children}
         </ChallengesContext.Provider>
     );

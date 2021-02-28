@@ -1,4 +1,5 @@
 import {ReactNode} from 'react'
+import { ViewPropsAndroid } from 'react-native';
 
 export interface contextProps {
     children: ReactNode;
@@ -20,7 +21,9 @@ export interface challenge{
 export interface dataContext {
     user: data;
     newChallenge: () => void;
+    showModal: () => void;
     activeChallenge: challenge;
+    activeModal: boolean;
 }
 
 export interface dataContextCountdown{

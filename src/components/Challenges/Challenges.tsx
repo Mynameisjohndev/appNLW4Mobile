@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
-import ChallengeModal  from '../ChallengeModal/ChallengeModal';
+import ChallengeModal from '../ChallengeModal/ChallengeModal';
 
 import styles from './styles';
 
 const Challengs = () => {
-    const { activeChallenge } = useContext(ChallengesContext);
-    console.log(activeChallenge.amount);
+    const { activeChallenge, showModal } = useContext(ChallengesContext);
+
     return (
         <View style={styles.containerChallenge}>
+            <ChallengeModal/>
             {activeChallenge.type === "arrow" ? (
                 <View style={styles.card}>
                     <Text style={styles.title}>Nada por aqui</Text>
@@ -22,14 +23,15 @@ const Challengs = () => {
                         <Text>Valendo: </Text>
                         <Text style={styles.title}>{activeChallenge.amount} xp</Text>
                         <View style={{ height: 35 }}></View>
-                        <TouchableOpacity style={styles.novoBotao}>
+                        <TouchableOpacity 
+                        onPress={showModal}
+                        style={styles.novoBotao}>
                         <Text style={styles.buttonText}>Novo desafio</Text>
                         </TouchableOpacity>
 
                     </View>
 
                 )}
-            <ChallengeModal/>
         </View>
     );
 }
