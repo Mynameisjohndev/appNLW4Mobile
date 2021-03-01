@@ -41,6 +41,11 @@ export function CountdowProvider ({ children } : contextProps){
         }
     }, [isActive, time])
 
+    const resetTimeCountdown = ()=>{
+        setTime(0.1 * 60);
+        setHasFinished(false);
+    }
+
     return(
         <CountdowContext.Provider value={{
             time,
@@ -50,6 +55,7 @@ export function CountdowProvider ({ children } : contextProps){
             hasFinished,
             startCountdown,
             stopCountodown,
+            resetTimeCountdown
           }}>
             {children}
         </CountdowContext.Provider>

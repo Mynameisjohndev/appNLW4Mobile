@@ -22,6 +22,7 @@ export interface dataContext {
     user: data;
     newChallenge: () => void;
     showModal: () => void;
+    failChallenge: () => void;
     activeChallenge: challenge;
     activeModal: boolean;
 }
@@ -34,4 +35,5 @@ export interface dataContextCountdown{
     hasFinished: boolean;
     startCountdown: ()=> void;
     stopCountodown: ()=> void;
+    resetTimeCountdown: ()=> void;
 }

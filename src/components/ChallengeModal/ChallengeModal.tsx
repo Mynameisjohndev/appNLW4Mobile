@@ -1,24 +1,46 @@
 import React, { useContext } from 'react';
-import { Modal, Text, TouchableOpacity, View } from 'react-native';
+import { Modal, Text, TouchableOpacity, View, Image } from 'react-native';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
-import Icon  from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Feather';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from './styles';
+import { CountdowContext } from '../../contexts/CountdowContext';
 
-const ChallengeModal = () =>{
-    const {activeModal, showModal, activeChallenge} = useContext(ChallengesContext);
-    console.log(activeModal)
-    return(
+function ChallengeModal() {
+    const { activeModal, showModal, activeChallenge, failChallenge } = useContext(ChallengesContext);
+    const { resetTimeCountdown } = useContext(CountdowContext);
+
+    const resetCountdown = () =>{
+        failChallenge();
+        resetTimeCountdown();
+    }
+
+    console.log(activeModal);
+    return (
         <Modal
-        animationType='slide'
+            animationType='slide'
             transparent={true}
             visible={activeModal}>
             <View style={styles.container}>
-            <View style={styles.subContainer} >
-                <Icon name="times-circle" size={30} color="#ff3c3c"/>
-                <TouchableOpacity onPress={showModal}>
-                    <Text>Fechar</Text>
-                </TouchableOpacity>
-            </View>
+                <View style={styles.subContainer}>
+
+                    <TouchableOpacity onPress={showModal}>
+                        <Icon size={32} color="#000" name="x-circle" />
+                    </TouchableOpacity>
+
+                    <View style={{ height: '80%', justifyContent: 'center', alignItems: 'center' }}>
+                        <Text>{activeChallenge.amount} XP</Text>
+                        <Icon2 size={100} color="#000" name={`${activeChallenge.type === "eye" ?
+                        "eye-outline" :
+                        "run"}`}/>
+                        <Text>{activeChallenge.description} XP</Text>
+                    </View>
+
+                    <TouchableOpacity onPress={resetCountdown}>
+                        <Text>Falhei</Text>
+                    </TouchableOpacity>
+
+                </View>
             </View>
         </Modal>
     );

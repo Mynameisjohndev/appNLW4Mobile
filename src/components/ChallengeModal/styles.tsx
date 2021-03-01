@@ -6,17 +6,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center', 
     flex: 1, 
-    margin: 20
+    margin: 20,
    },
 
    subContainer:{
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#f2f3fa',
     height: 300,
     width: '100%',
     elevation: 5,
-    borderRadius: 20
+    borderRadius: 20,
+    padding: 10,
+    opacity: 0.9
    }
 
 

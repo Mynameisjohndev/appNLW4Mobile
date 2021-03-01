@@ -11,8 +11,10 @@
         " postinstall ": "rm ./node_modules/react-native/local-cli/core/__fixtures__/files/package.json"
     },
     "dependencies": {
+        "@types/react-native-vector-icons": "^6.4.6",
         "react": "16.13.1",
         "react-native": "0.63.4",
+        "react-native-vector-icons": "^8.1.0",
         "styled-components": "^5.2.1"
     },
     "devDependencies": {
