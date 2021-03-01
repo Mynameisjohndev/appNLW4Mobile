@@ -25,6 +25,7 @@ export interface dataContext {
     failChallenge: () => void;
     activeChallenge: challenge;
     activeModal: boolean;
+    experienceBar: number;
 }
 
 export interface dataContextCountdown{

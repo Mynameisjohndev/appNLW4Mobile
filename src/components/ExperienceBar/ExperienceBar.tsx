@@ -6,7 +6,7 @@ import { ChallengesContext } from '../../contexts/ChallengesContext';
 import styles from './styles';
 
 const ExperienceBar = () => {
-    const {  } = useContext(ChallengesContext);
+    const { experienceBar } = useContext(ChallengesContext);
 
     return (
         <View style={styles.barContainer}>
@@ -19,7 +19,7 @@ const ExperienceBar = () => {
                     backgroundColor: '#cacaca'
                 }}>
                 <View style={{
-                    width: '90%',
+                    width: `${experienceBar}%`,
                     height: 4,
                     borderRadius: 5,
                     backgroundColor: '#1cb924'
@@ -27,8 +27,8 @@ const ExperienceBar = () => {
                 </View>
 
                 <View style={{flexDirection: 'row'}}>
-                <View style={{width: '90%' }}></View>
-                <Text>300xp</Text>
+                <View style={{width: `${experienceBar}%` }}></View>
+                <Text>{experienceBar}xp</Text>
                 </View>
 
                 </View>

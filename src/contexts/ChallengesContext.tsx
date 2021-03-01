@@ -42,6 +42,8 @@ export function AuthProvider({ children }: contextProps) {
         });
     }
 
+    const[experienceBar, setExperienceBar] = useState(0);
+
     return (
         <ChallengesContext.Provider value={{
              user, 
@@ -49,7 +51,8 @@ export function AuthProvider({ children }: contextProps) {
              showModal,
              activeChallenge,
              activeModal,
-             failChallenge
+             failChallenge,
+             experienceBar
              }}>
             {children}
         </ChallengesContext.Provider>
