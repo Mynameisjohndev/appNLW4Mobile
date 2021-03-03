@@ -12,7 +12,7 @@ export interface data {
 }
 
 
-export interface challenge{
+interface challenge{
     description: String;
     amount: number;
     type: String;
@@ -23,9 +23,13 @@ export interface dataContext {
     newChallenge: () => void;
     showModal: () => void;
     failChallenge: () => void;
+    completeChallenge: ()=> void;
     activeChallenge: challenge;
     activeModal: boolean;
     experienceBar: number;
+    level: number;
+    experienceToNextLevel: number,
+    challengesCompleted: number,
 }
 
 export interface dataContextCountdown{

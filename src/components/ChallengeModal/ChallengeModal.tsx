@@ -7,11 +7,16 @@ import styles from './styles';
 import { CountdowContext } from '../../contexts/CountdowContext';
 
 function ChallengeModal() {
-    const { activeModal, showModal, activeChallenge, failChallenge } = useContext(ChallengesContext);
+    const { activeModal, showModal, activeChallenge, failChallenge, completeChallenge } = useContext(ChallengesContext);
     const { resetTimeCountdown } = useContext(CountdowContext);
 
-    const resetCountdown = () =>{
+    const failChallenges = () =>{
         failChallenge();
+        resetTimeCountdown();
+    }
+
+    const winChallenges = () =>{
+        completeChallenge();
         resetTimeCountdown();
     }
 
@@ -36,9 +41,15 @@ function ChallengeModal() {
                         <Text>{activeChallenge.description} XP</Text>
                     </View>
 
-                    <TouchableOpacity onPress={resetCountdown}>
+                   <View style={{flexDirection: 'row'}}>
+                   <TouchableOpacity onPress={failChallenges}>
                         <Text>Falhei</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity onPress={winChallenges}>
+                        <Text>Completei</Text>
+                    </TouchableOpacity>
+                   </View>
 
                 </View>
             </View>

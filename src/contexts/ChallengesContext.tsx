@@ -42,7 +42,34 @@ export function AuthProvider({ children }: contextProps) {
         });
     }
 
+    function levelUp(){
+        setLevel(level+1)
+    }
+    const[challengesCompleted, setChallengesCompleted] = useState(0)
+    const[level, setLevel] = useState(0);
     const[experienceBar, setExperienceBar] = useState(0);
+
+    const experienceToNextLevel = Math.pow( ( level + 2) * 4 , 2 );
+
+    function completeChallenge(){
+        if(!activeChallenge){
+            return ;
+        }
+        const { amount } = activeChallenge;
+        let finalExperince = experienceBar + amount;
+        if(finalExperince >= experienceToNextLevel){
+            levelUp();
+            finalExperince = finalExperince - experienceToNextLevel;
+        }
+        setExperienceBar(finalExperince);
+        setActiveChallenge({
+            description: "Beautifull",
+            amount: 0,
+            type: 'arrow'
+        });
+        setChallengesCompleted(challengesCompleted + 1);
+
+    }
 
     return (
         <ChallengesContext.Provider value={{
@@ -52,7 +79,12 @@ export function AuthProvider({ children }: contextProps) {
              activeChallenge,
              activeModal,
              failChallenge,
-             experienceBar
+             completeChallenge,
+             experienceBar,
+             level,
+             experienceToNextLevel,
+             challengesCompleted,
+
              }}>
             {children}
         </ChallengesContext.Provider>

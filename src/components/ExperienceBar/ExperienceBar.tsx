@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { View, Text, Image } from 'react-native';
-import { ThemeContext } from 'styled-components';
 import { ChallengesContext } from '../../contexts/ChallengesContext';
 
 import styles from './styles';
 
 const ExperienceBar = () => {
-    const { experienceBar } = useContext(ChallengesContext);
-
+    const { experienceBar, experienceToNextLevel } = useContext(ChallengesContext);
+    const porcentToNextLevel = Math.round(experienceBar * 100) / experienceToNextLevel;
+    
     return (
         <View style={styles.barContainer}>
             <View style={styles.subContainer}>
@@ -27,12 +27,12 @@ const ExperienceBar = () => {
                 </View>
 
                 <View style={{flexDirection: 'row'}}>
-                <View style={{width: `${experienceBar}%` }}></View>
+                <View style={{width: `${porcentToNextLevel}%` }}></View>
                 <Text>{experienceBar}xp</Text>
                 </View>
 
                 </View>
-                <Text style={{ marginStart: 10 }}>600 xp</Text>
+                <Text style={{ marginStart: 10 }}>{experienceToNextLevel} xp</Text>
             </View>
         </View>
     );
