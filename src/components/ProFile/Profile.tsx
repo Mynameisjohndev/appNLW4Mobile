@@ -5,16 +5,15 @@ import { ChallengesContext } from '../../contexts/ChallengesContext';
 import styles from './styles';
 
 const Profile = () =>{
-    const { user } = useContext(ChallengesContext);
+    const { user, level } = useContext(ChallengesContext);
     return(
         <View style={styles.container}>
                 <Image style={styles.img} source={{ uri: `${user.foto}` }} />
                 <View style={styles.containerText}>
                     <Text style={styles.textNome}>{user.nome}</Text>
-                    <Text style={styles.textLevel}>Level {user.level}</Text>
+                    <Text style={styles.textLevel}>Level {level}</Text>
                 </View>
-
-            </View>
+        </View>
     );
 }
 

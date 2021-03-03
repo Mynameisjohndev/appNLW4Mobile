@@ -7,7 +7,6 @@ export interface contextProps {
 
 export interface data {
     nome: string;
-    level: number;
     foto: string;
 }
 

@@ -19,8 +19,6 @@ function ChallengeModal() {
         completeChallenge();
         resetTimeCountdown();
     }
-
-    console.log(activeModal);
     return (
         <Modal
             animationType='slide'

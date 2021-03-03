@@ -19,7 +19,7 @@ const ExperienceBar = () => {
                     backgroundColor: '#cacaca'
                 }}>
                 <View style={{
-                    width: `${experienceBar}%`,
+                    width: `${porcentToNextLevel}%`,
                     height: 4,
                     borderRadius: 5,
                     backgroundColor: '#1cb924'

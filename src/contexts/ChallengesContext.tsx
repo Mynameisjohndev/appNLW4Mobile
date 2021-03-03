@@ -10,7 +10,6 @@ export function AuthProvider({ children }: contextProps) {
 
     const [user, setUser] = useState({
         nome: "João",
-        level: 1,
         foto: "https://github.com/Jhon9191.png"
     });
 
@@ -23,7 +22,6 @@ export function AuthProvider({ children }: contextProps) {
     const newChallenge = () => {
         const randomChallenge = Math.floor(Math.random() * challengs.length);
         const challenge = challengs[randomChallenge];
-        console.log(challenge);
         setActiveChallenge(challenge);
     }
 
@@ -55,6 +53,7 @@ export function AuthProvider({ children }: contextProps) {
         if(!activeChallenge){
             return ;
         }
+        showModal();
         const { amount } = activeChallenge;
         let finalExperince = experienceBar + amount;
         if(finalExperince >= experienceToNextLevel){
