@@ -73,16 +73,16 @@ export function AuthProvider({ children }: contextProps) {
     return (
         <ChallengesContext.Provider value={{
              user, 
-             newChallenge, 
-             showModal,
              activeChallenge,
              activeModal,
-             failChallenge,
-             completeChallenge,
              experienceBar,
              level,
              experienceToNextLevel,
              challengesCompleted,
+             newChallenge, 
+             showModal,
+             failChallenge,
+             completeChallenge,
 
              }}>
             {children}

@@ -5,11 +5,10 @@ export interface contextProps {
     children: ReactNode;
 }
 
-export interface data {
+interface data {
     nome: string;
     foto: string;
 }
-
 
 interface challenge{
     description: String;
@@ -19,16 +18,16 @@ interface challenge{
 
 export interface dataContext {
     user: data;
-    newChallenge: () => void;
-    showModal: () => void;
-    failChallenge: () => void;
-    completeChallenge: ()=> void;
     activeChallenge: challenge;
     activeModal: boolean;
     experienceBar: number;
     level: number;
     experienceToNextLevel: number,
     challengesCompleted: number,
+    newChallenge: () => void;
+    showModal: () => void;
+    failChallenge: () => void;
+    completeChallenge: ()=> void;
 }
 
 export interface dataContextCountdown{
