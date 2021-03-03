@@ -9,18 +9,14 @@ import Challenge from '../../components/Challenges/Challenges';
 
 import { CountdowProvider } from '../../contexts/CountdowContext'
 const Home = () => {
-    const { } = useContext(ChallengesContext);
     return (
-
         <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-
             <CountdowProvider>
                 <Profile />
                 <ExperienceBar />
                 <Countdown />
                 <Challenge/>
             </CountdowProvider>
-
         </View>
     );
 }

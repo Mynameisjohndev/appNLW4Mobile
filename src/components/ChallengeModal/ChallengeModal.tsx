@@ -39,13 +39,12 @@ function ChallengeModal() {
                         <Text>{activeChallenge.description} XP</Text>
                     </View>
 
-                   <View style={{flexDirection: 'row'}}>
+                   <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
                    <TouchableOpacity onPress={failChallenges}>
-                        <Text>Falhei</Text>
+                        <Text style={{color: '#d14848', fontSize: 16}}>Falhei</Text>
                     </TouchableOpacity>
-
                     <TouchableOpacity onPress={winChallenges}>
-                        <Text>Completei</Text>
+                        <Text style={{color: '#1cb924', fontSize: 16}}>Completei</Text>
                     </TouchableOpacity>
                    </View>
 

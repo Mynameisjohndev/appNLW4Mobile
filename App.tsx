@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import React from 'react';
 import { AuthProvider } from './src/contexts/ChallengesContext';
 
 import Home from  './src/pages/home/index';
 
-console.disableYellowBox;
-
+console.disableYellowBox = true;
 function App() {
   return (
       <AuthProvider>

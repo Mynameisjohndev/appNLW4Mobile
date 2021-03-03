@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { ColorValue, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
@@ -25,9 +25,15 @@ const styles = StyleSheet.create({
         color: '#474747',
     }, textLevel: {
         fontSize: 14,
-        fontWeight: '800'
-    },
+        fontWeight: '800',
+        color: '#474747',
+    },challengesCompleted:{
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#474747',
+    }
 
 });
+
 
 export default styles;
